@@ -1,0 +1,820 @@
+
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>अंजली ♥ निखिल  | शुभविवाह निमंत्रण</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700;800&family=Yatra+One&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --red:#7b1828;
+  --dark:#48101d;
+  --gold:#c79a48;
+  --cream:#fff7e8;
+  --ink:#512a2b;
+}
+
+* {
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:'Noto Serif Devanagari',serif;
+  background:var(--cream);
+  color:var(--ink);
+  text-align:center;
+  overflow-x:hidden;
+}
+
+button {
+  font-family:inherit;
+  cursor:pointer;
+}
+
+/* OPENING COVER */
+
+.cover {
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px 16px;
+  background:radial-gradient(circle,#fffdf5,#f4dfb9);
+}
+
+.cover-card {
+  width:100%;
+  max-width:470px;
+  padding:40px 22px;
+  border:5px double var(--gold);
+  outline:1px solid var(--gold);
+  outline-offset:6px;
+  background:#fffaf0;
+  border-radius:190px 190px 18px 18px;
+  box-shadow:0 15px 40px #53111d25;
+}
+
+.om {
+  font-size:27px;
+  color:var(--red);
+  margin-bottom:15px;
+  font-weight:700;
+}
+
+.cover h1,
+.names,
+.section-title {
+  font-family:'Yatra One',cursive;
+  color:var(--red);
+}
+
+.cover h1 {
+  font-size:clamp(30px,8vw,40px);
+  line-height:1.6;
+}
+
+.cover p {
+  line-height:2;
+}
+
+.invitation-heading {
+  font-family:'Yatra One',cursive;
+  color:var(--red);
+  font-size:clamp(27px,7vw,38px);
+  font-weight:700;
+  line-height:1.8;
+  margin:15px 0;
+}
+
+.cover-photo {
+  width:175px;
+  height:205px;
+  object-fit:cover;
+  border:5px solid white;
+  outline:2px solid var(--gold);
+  border-radius:100px 100px 12px 12px;
+  margin:18px auto;
+  display:block;
+}
+
+.open-btn,
+.map-btn {
+  background:var(--red);
+  color:white;
+  border:1px solid var(--gold);
+  padding:13px 25px;
+  border-radius:30px;
+  font-size:16px;
+  margin-top:20px;
+}
+
+/* MAIN CONTENT */
+
+#main {
+  display:none;
+}
+
+.top {
+  background:linear-gradient(140deg,var(--red),var(--dark));
+  color:#ffedc5;
+  padding:55px 15px;
+  border-bottom:6px double var(--gold);
+}
+
+.top .om {
+  color:#ffdf9b;
+}
+
+.names {
+  color:#ffe1a0;
+  font-size:clamp(38px,9vw,60px);
+  line-height:1.6;
+  margin:15px 0;
+  overflow-wrap:anywhere;
+}
+
+.top p {
+  line-height:2;
+}
+
+.heart {
+  color:#f6c56c;
+}
+
+/* COMMON SECTIONS */
+
+.section {
+  max-width:760px;
+  width:calc(100% - 28px);
+  margin:30px auto;
+  padding:30px 20px;
+  background:#fffdf7;
+  border:1px solid #dfbd79;
+  border-radius:14px;
+  box-shadow:0 7px 20px #54101b10;
+}
+
+.section-title {
+  font-size:clamp(25px,6vw,33px);
+  line-height:1.7;
+  margin-bottom:10px;
+}
+
+.line {
+  height:2px;
+  width:90px;
+  background:var(--gold);
+  margin:15px auto 22px;
+}
+
+.message {
+  font-size:17px;
+  line-height:2.2;
+}
+
+/* COUPLE DETAILS */
+
+.details {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.detail {
+  padding:20px 10px;
+  background:#fff4dc;
+  border:1px solid #e6c98c;
+  border-radius:12px;
+}
+
+.detail strong {
+  display:block;
+  color:var(--red);
+  font-size:19px;
+  line-height:1.8;
+}
+
+.detail span {
+  color:#93631e;
+  font-size:15px;
+}
+
+/* SCRATCH MUHURTA */
+
+.scratch-wrap {
+  position:relative;
+  width:100%;
+  max-width:320px;
+  height:115px;
+  margin:18px auto;
+}
+
+.scratch-result {
+  position:absolute;
+  inset:0;
+  background:#fff3d9;
+  border:2px solid var(--gold);
+  border-radius:8px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:var(--red);
+  line-height:2;
+  font-size:15px;
+}
+
+.scratch-result strong {
+  font-size:19px;
+}
+
+#scratch {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  touch-action:none;
+  cursor:crosshair;
+  border:2px solid var(--gold);
+  border-radius:8px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.time {
+  min-width:70px;
+  background:var(--red);
+  color:white;
+  padding:13px 8px;
+  border-radius:10px;
+}
+
+.time strong {
+  display:block;
+  font-size:24px;
+  color:#ffdf9b;
+}
+
+.time small {
+  font-size:13px;
+}
+
+/* PROGRAM */
+
+.event {
+  padding:15px;
+  margin:12px 0;
+  border-left:4px solid var(--gold);
+  background:#fff5e1;
+  text-align:left;
+  border-radius:7px;
+}
+
+.event strong {
+  color:var(--red);
+  font-size:18px;
+}
+
+/* VENUE */
+
+.venue {
+  padding:24px 14px;
+  background:#fff4dc;
+  border:2px solid #dfbd79;
+  border-radius:12px;
+}
+
+.venue h3 {
+  font-family:'Yatra One',cursive;
+  color:var(--red);
+  font-size:clamp(23px,6vw,32px);
+  line-height:1.7;
+  margin-bottom:12px;
+  overflow-wrap:anywhere;
+}
+
+.venue p {
+  font-size:17px;
+  line-height:2.1;
+}
+
+.map-btn {
+  text-decoration:none;
+  display:inline-block;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+
+.gallery img {
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid var(--gold);
+}
+
+/* INFORMATION */
+
+.info-list {
+  text-align:left;
+  line-height:2.2;
+  padding-left:20px;
+}
+
+/* FOOTER */
+
+.footer {
+  background:var(--dark);
+  color:#ffe8b6;
+  padding:40px 15px;
+  line-height:2.2;
+}
+
+.footer h2 {
+  font-family:'Yatra One',cursive;
+  font-size:30px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:480px) {
+
+  .details {
+    grid-template-columns:1fr;
+  }
+
+  .section {
+    padding:25px 15px;
+  }
+
+  .cover-card {
+    padding:30px 15px;
+  }
+
+  .gallery img {
+    height:150px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING INVITATION -->
+
+<div class="cover" id="cover">
+
+ <div class="cover-card">
+
+  <div class="om">॥ श्री गणेशाय नमः ॥</div>
+
+  <h2 class="invitation-heading">
+   ॥ सस्नेह निमंत्रण ॥
+  </h2>
+<img src="./images/couple.jpeg" class="cover-photo" alt="अंजली आणि निखिल">
+  <h1>
+   अंजली <span class="heart">♥</span> निखिल
+  </h1>
+
+  <p>बुधवार, ०२ डिसेंबर २०२६</p>
+  <p>दुपारी १२:२१ वा.</p>
+
+  <button class="open-btn" onclick="openCard()">
+   🌸 निमंत्रण उघडा 🌸
+  </button>
+
+ </div>
+
+</div>
+
+<!-- MAIN WEBSITE -->
+
+<div id="main">
+
+<!-- HEADER -->
+
+<header class="top">
+
+ <div class="om">॥ श्री गणेशाय नमः ॥</div>
+
+ <p>॥ सस्नेह निमंत्रण ॥</p>
+
+ <h1 class="names">
+  अंजली <span class="heart">♥</span> निखिल
+ </h1>
+
+ <p>बुधवार, ०२ डिसेंबर २०२६</p>
+
+ <p>दुपारी १२:२१ वा.</p>
+
+</header>
+
+<!-- INVITATION MESSAGE -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ सस्नेह निमंत्रण ॥
+ </h2>
+
+ <div class="line"></div>
+
+ <p class="message">
+
+  सप्रेम नमस्कार,<br>
+
+  आमच्या परिवारातील शुभमंगल कार्यानिमित्त
+  आपण सहकुटुंब सहपरिवार उपस्थित राहून
+  वधू-वरांना शुभाशीर्वाद द्यावेत,
+  हीच आपल्याला प्रेमपूर्वक विनंती.
+
+  <br><br>
+
+  आपल्या आगमनाने आमचा आनंद द्विगुणित होईल.
+
+ </p>
+
+</section>
+
+<!-- COUPLE -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ शुभविवाह ॥
+ </h2>
+
+ <div class="line"></div>
+
+ <h2 class="names" style="font-size:36px">
+  अंजली <span class="heart">♥</span> निखिल
+ </h2>
+
+ <p>एक नवी सुरुवात, एका सुंदर नात्याची!</p>
+
+</section>
+
+<!-- WEDDING MUHURTA SCRATCH CARD -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ विवाह मुहूर्त ॥
+ </h2>
+
+ <div class="line"></div>
+
+ <p>खालील पट्टी स्क्रॅच करून शुभमुहूर्त पहा</p>
+
+ <div class="scratch-wrap">
+
+  <div class="scratch-result">
+
+   <strong>॥ शुभविवाह ॥</strong>
+
+   <p>बुधवार, ०२ डिसेंबर २०२६</p>
+
+   <p>दुपारी १२:२१ वा.</p>
+
+  </div>
+
+  <canvas id="scratch" width="640" height="230"></canvas>
+
+ </div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ शुभक्षणाची प्रतीक्षा ॥
+ </h2>
+
+ <div class="line"></div>
+
+ <p>आपल्या भेटीच्या मंगल क्षणांसाठी...</p>
+
+ <div class="countdown">
+
+  <div class="time">
+   <strong id="days">00</strong>
+   <small>दिवस</small>
+  </div>
+
+  <div class="time">
+   <strong id="hours">00</strong>
+   <small>तास</small>
+  </div>
+
+  <div class="time">
+   <strong id="minutes">00</strong>
+   <small>मिनिटे</small>
+  </div>
+
+  <div class="time">
+   <strong id="seconds">00</strong>
+   <small>सेकंद</small>
+  </div>
+
+ </div>
+
+</section>
+
+<!-- PROGRAM -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ कार्यक्रम पत्रिका ॥
+ </h2>
+
+ <div class="line"></div>
+
+ <div class="event">
+
+  <strong>शुभविवाह सोहळा</strong>
+
+  <p>बुधवार, ०२ डिसेंबर २०२६</p>
+
+  <p>दुपारी १२:३१ वा.</p>
+
+ </div>
+
+</section>
+
+<!-- VENUE -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ विवाह स्थळ ॥
+ </h2>
+
+ <div class="line"></div>
+
+ <div class="venue">
+
+  <h3>राज पार्क मंगल कार्यालय</h3>
+
+  <p>
+  वरकुटे – झरे रोड,<br>
+   ता. माण, जि. सातारा
+  </p>
+
+  <a class="map-btn"
+   href="https://www.google.com/maps/place/Rajpark+Mangal+Karyalay+(MARRIAGE+Lawn%2FHall)/@17.4976452,74.8175389,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc3fd03640ab4df:0xb6fd6ba7fdae8d2e!8m2!3d17.4976452!4d74.8175389!16s%2Fg%2F11ddwpxsy8"
+   target="_blank"
+   rel="noopener">
+
+   📍 Google Maps वर स्थळ पहा
+
+  </a>
+
+ </div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ सुंदर आठवणी ॥
+ </h2>
+
+ <div class="line"></div>
+<div class="gallery">
+    <img src="./images/couple.jpeg" alt="निखिल आणि अंजली">
+    <img src="./images/photo2.jpeg" alt="सुंदर आठवण">
+    <img src="./images/photo3.jpeg" alt="सुंदर आठवण">
+    <img src="./images/photo4.jpeg" alt="सुंदर आठवण">
+    <img src="./images/photo5.jpeg" alt="सुंदर आठवण">
+    <img src="./images/photo6.jpeg" alt="सुंदर आठवण">
+</div>
+ 
+
+</section>
+
+<!-- INFORMATION -->
+
+<section class="section">
+
+ <h2 class="section-title">
+  ॥ आपल्यासाठी काही सूचना ॥
+ </h2>
+
+ <div class="line"></div>
+
+ <ul class="info-list">
+
+  <li>कृपया वेळेवर उपस्थित राहावे.</li>
+
+  <li>आपल्या कुटुंबासह उपस्थित राहून सोहळ्याची शोभा वाढवावी.</li>
+
+  <li>आपले आशीर्वाद आणि शुभेच्छा हीच आमच्यासाठी अनमोल भेट आहे.</li>
+
+ </ul>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+ <h2>शुभमंगलम!</h2>
+
+ <p>॥ श्री गणेशाय नमः ॥</p>
+
+ <p>निखिल ♥ अंजली</p>
+
+ <p>आपली उपस्थिती आणि आशीर्वाद हीच आमची खरी भेट!</p>
+
+</footer>
+
+</div>
+
+<script>
+
+// OPEN INVITATION
+
+function openCard() {
+
+ document.getElementById("cover").style.display="none";
+
+ document.getElementById("main").style.display="block";
+
+ window.scrollTo(0,0);
+
+}
+
+
+// COUNTDOWN TIMER
+
+function countdown() {
+
+ const target = new Date(2026,11,2,12,31,0).getTime();
+
+ const now = Date.now();
+
+ let diff = target-now;
+
+ if(diff<=0) {
+
+  document.querySelector(".countdown").innerHTML =
+  "<h3>शुभविवाह सोहळा सुरू झाला आहे! ❤️</h3>";
+
+  return;
+
+ }
+
+ document.getElementById("days").textContent =
+ Math.floor(diff/86400000);
+
+ document.getElementById("hours").textContent =
+ Math.floor(diff/3600000)%24;
+
+ document.getElementById("minutes").textContent =
+ Math.floor(diff/60000)%60;
+
+ document.getElementById("seconds").textContent =
+ Math.floor(diff/1000)%60;
+
+}
+
+countdown();
+
+setInterval(countdown,1000);
+
+
+// SCRATCH CARD
+
+const canvas = document.getElementById("scratch");
+
+const ctx = canvas.getContext("2d");
+
+let drawing = false;
+
+function coverScratch() {
+
+ ctx.globalCompositeOperation="source-over";
+
+ ctx.fillStyle="#a87834";
+
+ ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ ctx.fillStyle="#fff1d0";
+
+ ctx.font="bold 35px sans-serif";
+
+ ctx.textAlign="center";
+
+ ctx.textBaseline="middle";
+
+ ctx.fillText("✧ येथे स्क्रॅच करा ✧",320,115);
+
+}
+
+coverScratch();
+
+function erase(e) {
+
+ if(!drawing) return;
+
+ const rect=canvas.getBoundingClientRect();
+
+ const x=(e.clientX-rect.left)*canvas.width/rect.width;
+
+ const y=(e.clientY-rect.top)*canvas.height/rect.height;
+
+ ctx.globalCompositeOperation="destination-out";
+
+ ctx.beginPath();
+
+ ctx.arc(x,y,35,0,Math.PI*2);
+
+ ctx.fill();
+
+}
+
+function checkScratch() {
+
+ const pixels=ctx.getImageData(
+  0,0,canvas.width,canvas.height
+ ).data;
+
+ let cleared=0;
+
+ for(let i=3;i<pixels.length;i+=4) {
+
+  if(pixels[i]<128) {
+   cleared++;
+  }
+
+ }
+
+ if(cleared/(pixels.length/4)>0.35) {
+
+  canvas.style.display="none";
+
+ }
+
+}
+
+canvas.addEventListener("pointerdown",e=>{
+
+ drawing=true;
+
+ canvas.setPointerCapture(e.pointerId);
+
+ erase(e);
+
+});
+
+canvas.addEventListener("pointermove",erase);
+
+canvas.addEventListener("pointerup",()=>{
+
+ drawing=false;
+
+ checkScratch();
+
+});
+
+canvas.addEventListener("pointercancel",()=>{
+
+ drawing=false;
+
+ checkScratch();
+
+});
+
+</script>
+
+</body>
+</html>
